@@ -14,7 +14,7 @@
 ```js
 function throwDie() {
     let number = Math.floor(Math.random() * 6) + 1;
-    document.getElementById("cube").innerHTML = `<img src=${number}.jpg>`;
+    document.getElementById("result").innerHTML = `<img src=${number}.jpg>`;
 }
 ```
 
@@ -23,3 +23,29 @@ function throwDie() {
 <button onclick="throwDie();">Бросок<button>
 ```
 Протестировать работу кнопки (при каждом нажатии на кнопку обновляется изображение кубика)
+
+<details>
+<summary>Если возникли трудности, просмотрите код здесь</summary>
+
+```html
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Бросок кубика</title>
+    </head>
+    <body>
+        <h1>Бросок кубика</h1>
+        <button onclick="throwDie();">Бросок</button>
+        <div id="result">
+        </div>
+        <script>
+            function throwDie() {
+                let number = Math.floor(Math.random() * 6) + 1;
+                document.getElementById("result").innerHTML = `<img src="img/${number}.jpg">`;
+            }
+        </script>
+    </body>
+</html>
+```
+</details>
